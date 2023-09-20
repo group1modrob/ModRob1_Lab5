@@ -62,9 +62,10 @@ def main():
     bot.arm.set_single_joint_position(joint_name='wrist_angle', position=-90*np.pi/180)
     time.sleep(sleep_time)
 
-    # Now move it back to home
+    # Now move it back to home and shut down
     bot.arm.go_to_home_pose()
     bot.arm.go_to_sleep_pose()
+    bot.shutdown()
 
 
 if __name__ == '__main__':
